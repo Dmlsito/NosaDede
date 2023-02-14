@@ -1,0 +1,21 @@
+get usuarios () // listUsuarios
+get usuario (id) // usuario/{id}
+get peliculas () // listPeliculas
+get pelicula (id) // pelicula/{id}
+get pelicula (nombre) // pelicula/{nombre}
+get series() // listSeries
+get serie (id) // serie/{id}
+get serie (nombre) // serie/{nombre}
+get directores () // listDirectores
+get director (id) // director/{id}
+get director (nombre) // director/{nombre}
+get actores() // listActores
+get actor(id) // actor/{id}
+get actor (nombre) // actor/{nombre}
+get generos() // listGeneros
+get genero(id) // genero/{id}
+get genero (nombre) // genero/{nombre}
+
+post usuario (usuario) // usuario/save
+post pelicula (pelicula) // pelicula/save
+post serie (serie) // serie/save
