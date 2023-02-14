@@ -1,0 +1,15 @@
+﻿<Window x:Class="Trabajo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Trabajo"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Canvas>
+        <Image Stretch="Fill" Source= "https://raw.githubusercontent.com/Dmlsito/NosaDede/master/Documentacion/logo_nosadede.png" Width="1100" Height="600" Canvas.Bottom= "650" Canvas.Left="430" ></Image>
+        <Button Height="50" Width="300" Canvas.Left="800" Canvas.Top="250">Inicar sesion</Button>
+        <Button Height="50" Width="300" Canvas.Left="800" Canvas.Top="350">Registrarse</Button>
+        
+    </Canvas>
+</Window>
