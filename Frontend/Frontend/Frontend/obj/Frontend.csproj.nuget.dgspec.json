@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\daniel\\Documents\\GitHub\\TrabajoAD\\Frontend\\Frontend\\Frontend\\Frontend.csproj": {}
+    "C:\\Users\\daniel\\Documents\\GitHub\\NosaDede\\Frontend\\Frontend\\Frontend\\Frontend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\daniel\\Documents\\GitHub\\TrabajoAD\\Frontend\\Frontend\\Frontend\\Frontend.csproj": {
+    "C:\\Users\\daniel\\Documents\\GitHub\\NosaDede\\Frontend\\Frontend\\Frontend\\Frontend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\daniel\\Documents\\GitHub\\TrabajoAD\\Frontend\\Frontend\\Frontend\\Frontend.csproj",
+        "projectUniqueName": "C:\\Users\\daniel\\Documents\\GitHub\\NosaDede\\Frontend\\Frontend\\Frontend\\Frontend.csproj",
         "projectName": "Frontend",
-        "projectPath": "C:\\Users\\daniel\\Documents\\GitHub\\TrabajoAD\\Frontend\\Frontend\\Frontend\\Frontend.csproj",
+        "projectPath": "C:\\Users\\daniel\\Documents\\GitHub\\NosaDede\\Frontend\\Frontend\\Frontend\\Frontend.csproj",
         "packagesPath": "C:\\Users\\daniel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\daniel\\Documents\\GitHub\\TrabajoAD\\Frontend\\Frontend\\Frontend\\obj\\",
+        "outputPath": "C:\\Users\\daniel\\Documents\\GitHub\\NosaDede\\Frontend\\Frontend\\Frontend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\daniel\\AppData\\Roaming\\NuGet\\NuGet.Config",
