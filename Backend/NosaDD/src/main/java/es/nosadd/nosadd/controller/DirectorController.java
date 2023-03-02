@@ -4,6 +4,7 @@ import es.nosadd.nosadd.dto.DirectorDTO;
 import es.nosadd.nosadd.model.Director;
 import es.nosadd.nosadd.service.DirectorService;
 import es.nosadd.nosadd.util.Errores;
+import es.nosadd.nosadd.util.Exitos;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -28,8 +30,8 @@ public class DirectorController {
         Director directorConsultado = directorService.findById(directorDTO.toDirector().getId());
 
         if (directorConsultado == null) {
-            Director directorGuardado = directorService.save(directorDTO.toDirector());
-            return ResponseEntity.status(HttpStatus.CREATED).build();
+            directorService.save(directorDTO.toDirector());
+            return ResponseEntity.status(HttpStatus.CREATED).body(Exitos.DIRECTOR_CREADO);
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Errores.ERROR_DIRECTOR_YA_EXISTE);
         }
@@ -45,19 +47,73 @@ public class DirectorController {
         }
     }
 
-    @GetMapping("/nombre/{nombre}")
+    @GetMapping("/all/nombre/{nombre}")
     public ResponseEntity<?> getDirector(@PathVariable String nombre) {
-        Optional<Director> director = directorService.findByNombre(nombre);
-        if (director.isPresent()) {
-            return ResponseEntity.status(HttpStatus.OK).body(director);
+        List<Director> directores = directorService.findAllByNombre(nombre);
+        if (directores != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(directores);
         } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errores.ERROR_DIRECTOR_NO_ENCONTRADO);
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errores.ERROR_DIRECTORES_NO_ENCONTRADOS);
+        }
+    }
+
+    @GetMapping("/all/apellido/{apellido}")
+    public ResponseEntity<?> getDirectorByApellido(@PathVariable String apellidos) {
+        List<Director> directores = directorService.findAllByApellidos(apellidos);
+        if (directores != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(directores);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errores.ERROR_DIRECTORES_NO_ENCONTRADOS);
+        }
+    }
+
+    @GetMapping("/all/nombre/{nombre}/apellido/{apellido}")
+    public ResponseEntity<?> getDirectorByNombreAndApellido(@PathVariable String nombre, @PathVariable String apellidos) {
+        List<Director> directores = directorService.findAllByNombreAndApellidos(nombre, apellidos);
+        if (directores != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(directores);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errores.ERROR_DIRECTORES_NO_ENCONTRADOS);
+        }
+    }
+
+    @GetMapping("/all/nacionalidad/{nacionalidad}")
+    public ResponseEntity<?> getDirectorByNacionalidad(@PathVariable String nacionalidad) {
+        List<Director> directores = directorService.findAllByNacionalidad(nacionalidad);
+        if (directores != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(directores);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errores.ERROR_DIRECTORES_NO_ENCONTRADOS);
+        }
+    }
+
+    @GetMapping("/all/fechaNacimiento/{fechaNacimiento}")
+    public ResponseEntity<?> getDirectorByFechaNacimiento(@PathVariable String fechaNacimiento) {
+        List<Director> directores = directorService.findAllByFechaNacimiento(fechaNacimiento);
+        if (directores != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(directores);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errores.ERROR_DIRECTORES_NO_ENCONTRADOS);
+        }
+    }
+
+    @GetMapping("/all/valoracion/{valoracion}")
+    public ResponseEntity<?> getDirectorByValoracion(@PathVariable int valoracion) {
+        List<Director> directores = directorService.findAllByValoracion(valoracion);
+        if (directores != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(directores);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errores.ERROR_DIRECTORES_NO_ENCONTRADOS);
         }
     }
 
     @GetMapping("/all")
     public ResponseEntity<?> getAllDirectores() {
-        return ResponseEntity.status(HttpStatus.OK).body(directorService.findAll());
+        if (directorService.findAll().size() > 0) {
+            return ResponseEntity.status(HttpStatus.OK).body(directorService.findAll());
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errores.ERROR_DIRECTORES_NO_ENCONTRADOS);
+        }
     }
 
     @DeleteMapping("/delete/{id}")
@@ -65,18 +121,7 @@ public class DirectorController {
         Director director = directorService.findById(id);
         if (director != null) {
             directorService.deleteById(id);
-            return ResponseEntity.status(HttpStatus.OK).body(Errores.DIRECTOR_ELIMINADO);
-        } else {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errores.ERROR_DIRECTOR_NO_ENCONTRADO);
-        }
-    }
-
-    @DeleteMapping("/delete/nombre/{nombre}")
-    public ResponseEntity<?> deleteDirector(@PathVariable String nombre) {
-        Optional<Director> director = directorService.findByNombre(nombre);
-        if (director.isPresent()) {
-            directorService.deleteById(director.get().getId());
-            return ResponseEntity.status(HttpStatus.OK).body(Errores.DIRECTOR_ELIMINADO);
+            return ResponseEntity.status(HttpStatus.OK).body(Exitos.DIRECTOR_ELIMINADO);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errores.ERROR_DIRECTOR_NO_ENCONTRADO);
         }

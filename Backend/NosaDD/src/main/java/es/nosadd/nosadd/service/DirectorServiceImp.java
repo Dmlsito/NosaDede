@@ -28,12 +28,6 @@ public class DirectorServiceImp implements DirectorService{
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public Optional<Director> findByNombre(String nombre) {
-        return directorRepository.findByNombre(nombre);
-    }
-
-    @Override
     @Transactional
     public Director save(Director director) {
         return directorRepository.save(director);
@@ -43,6 +37,42 @@ public class DirectorServiceImp implements DirectorService{
     @Transactional
     public void deleteById(int id) {
         directorRepository.deleteById(id);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Director> findAllByNombre(String nombre) {
+        return directorRepository.findAllByNombre(nombre);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Director> findAllByApellidos(String apellidos) {
+        return directorRepository.findAllByApellidos(apellidos);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Director> findAllByNombreAndApellidos(String nombre, String apellidos) {
+        return directorRepository.findAllByNombreAndApellidos(nombre, apellidos);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Director> findAllByNacionalidad(String nacionalidad) {
+        return directorRepository.findAllByNacionalidad(nacionalidad);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Director> findAllByFechaNacimiento(String fechaNacimiento) {
+        return directorRepository.findAllByFechaNacimiento(fechaNacimiento);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Director> findAllByValoracion(int valoracion) {
+        return directorRepository.findAllByValoracion(valoracion);
     }
 
 

@@ -8,7 +8,11 @@ import java.util.Optional;
 
 public interface DirectorRepository extends JpaRepository<Director, Integer> {
 
-    Optional<Director> findByNombre(String nombre);
-    List<Director> findAllByOrderByNombreAsc();
+    List<Director> findAllByNombre(String nombre);
+    List<Director> findAllByApellidos(String apellidos);
+    List<Director> findAllByNombreAndApellidos(String nombre, String apellidos);
+    List<Director> findAllByNacionalidad(String nacionalidad);
+    List<Director> findAllByFechaNacimiento(String fechaNacimiento);
+    List<Director> findAllByValoracion(int valoracion);
 
 }
