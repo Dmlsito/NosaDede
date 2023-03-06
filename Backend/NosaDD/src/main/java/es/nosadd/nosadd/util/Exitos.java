@@ -8,4 +8,10 @@ public class Exitos {
     public static final String ACTOR_ELIMINADO = "Actor eliminado";
     public static final String ACTOR_CREADO = "Actor creado";
     public static final String ACTOR_EDITADO = "Actor editado";
+    public static final String PELICULA_ELIMINADA = "Pelicula eliminada";
+    public static final String PELICULA_CREADA = "Pelicula creada";
+    public static final String PELICULA_EDITADA = "Pelicula editada";
+    public static final String SERIE_ELIMINADA = "Serie eliminada";
+    public static final String SERIE_CREADA = "Serie creada";
+    public static final String SERIE_EDITADA = "Serie editada";
 }
