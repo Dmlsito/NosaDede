@@ -14,5 +14,8 @@ public class Errores {
     public static final String ERROR_SERIES_NO_ENCONTRADAS = "No se han encontrado series";
     public static final String ERROR_SERIE_NO_ENCONTRADA = "No se ha encontrado la serie";
     public static final String ERROR_SERIE_YA_EXISTE = "La serie ya existe";
+    public static final String ERROR_GENEROS_NO_ENCONTRADOS = "No se han encontrado generos";
+    public static final String ERROR_GENERO_NO_ENCONTRADO = "No se ha encontrado el genero";
+    public static final String ERROR_GENERO_YA_EXISTE = "El genero ya existe";
 
 }

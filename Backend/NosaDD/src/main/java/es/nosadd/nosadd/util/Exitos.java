@@ -14,4 +14,7 @@ public class Exitos {
     public static final String SERIE_ELIMINADA = "Serie eliminada";
     public static final String SERIE_CREADA = "Serie creada";
     public static final String SERIE_EDITADA = "Serie editada";
+    public static final String GENERO_ELIMINADO = "Genero eliminado";
+    public static final String GENERO_CREADO = "Genero creado";
+    public static final String GENERO_EDITADO = "Genero editado";
 }
