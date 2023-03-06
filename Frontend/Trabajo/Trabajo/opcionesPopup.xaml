@@ -1,0 +1,20 @@
+﻿<Window x:Class="Trabajo.opcionesPopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Trabajo"
+        mc:Ignorable="d"
+        Title="opcionesPopup" Height="450" Width="800">
+    <Grid>
+        <!--El boton se combiaria por la imagen de usurio y bueno... los colores y la fuente estan pendientes-->
+        <Button x:Name="bt1" Content="Usuario" Width="100" Height="30" Click="bt1_Click"/>
+        <Popup x:Name="opciones" PlacementTarget="{Binding ElementName=bt1}" Margin="0,10,0,10">
+            <StackPanel  x:Name="sp">
+                <TextBlock Text="Cambiar contraseña" Margin="20,20,20,10" TextAlignment="Left" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Text="Cambiar email" Margin="20,0,20,10"  TextAlignment="Left" FontWeight="Bold" Foreground="White"/>
+                <TextBlock Text="Cerrar sesión" Margin="20,0,20,20"  TextAlignment="Left" FontWeight="Bold" Foreground="White"/>
+            </StackPanel>
+        </Popup>
+    </Grid>
+</Window>
