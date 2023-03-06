@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "Peliculas")
 @Data
@@ -25,6 +27,9 @@ public class Pelicula {
     private int valoracion;
     @Column(name = "Imagen_Pelicula")
     private String imagenPelicula;
+
+
+
 
     public Pelicula(String titulo, String duracion, String resumen, int valoracion, String imagenPelicula) {
         this.titulo = titulo;

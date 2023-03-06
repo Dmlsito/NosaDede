@@ -17,5 +17,9 @@ public class Errores {
     public static final String ERROR_GENEROS_NO_ENCONTRADOS = "No se han encontrado generos";
     public static final String ERROR_GENERO_NO_ENCONTRADO = "No se ha encontrado el genero";
     public static final String ERROR_GENERO_YA_EXISTE = "El genero ya existe";
+    public static final String ERROR_GENEROSPELICULAS_NO_ENCONTRADOS = "No se han encontrado generosPeliculas";
+    public static final String ERROR_GENEROSPELICULAS_NO_ENCONTRADO = "No se ha encontrado el generoPelicula";
+    public static final String ERROR_GENEROSPELICULAS_YA_EXISTE = "El generoPelicula ya existe";
+
 
 }

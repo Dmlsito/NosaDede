@@ -17,4 +17,7 @@ public class Exitos {
     public static final String GENERO_ELIMINADO = "Genero eliminado";
     public static final String GENERO_CREADO = "Genero creado";
     public static final String GENERO_EDITADO = "Genero editado";
+    public static final String GENEROSPELICULAS_ELIMINADO = "GenerosPeliculas eliminado";
+    public static final String GENEROSPELICULAS_CREADO = "GenerosPeliculas creado";
+    public static final String GENEROSPELICULAS_EDITADO = "GenerosPeliculas editado";
 }
