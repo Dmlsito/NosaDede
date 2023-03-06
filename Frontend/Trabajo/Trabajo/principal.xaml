@@ -1,0 +1,101 @@
+﻿<Window x:Class="Trabajo.principal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Trabajo"
+        mc:Ignorable="d"
+        Title="principal" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="90*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Background="Red">
+            <TextBlock Text="LOGO" FontSize="40" Margin="10,10,20,0" FontWeight="Bold"/>
+            <TextBlock Text="Inicio"  Margin="10,10,10,0"/>
+            <TextBlock Text="Peliculas" Margin="10,10,10,0"/>
+            <TextBlock Text="Series" Margin="10,10,20,0"/>
+            <TextBox Text="buscar" Height="20" Width="200" Margin="250,0,0,0"/>
+        </WrapPanel>
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Estrenos recientes" Margin="20,20,20,10"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="atras" Margin="10,0,0,0" Click="Button_Click" />
+                <ScrollViewer x:Name="scestreno" Grid.Column="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
+                    <WrapPanel>
+                        <!-- pendiente de poner los bordes redondeados y algo cuando pases al raton por encima-->
+                        <Image x:Name="estreno1" Source="https://i.pinimg.com/originals/fd/82/c1/fd82c1116eb734b625552241e00e2a20.png" Width="160" Height="200"/>
+                        <Image x:Name="estreno2" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/caballero-oscuro-joker/7055604-1-esl-ES/CABALLERO-OSCURO-JOKER.jpg" Width="160" Height="200"/>
+                        <Image x:Name="estreno3" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/cisne-negro/7055592-1-esl-ES/CISNE-NEGRO.jpg?resize=480:*" Width="160" Height="200"/>
+                        <Image x:Name="estreno4" Source="https://cdn.oldskull.net/wp-content/uploads/2015/07/Flore-Maquin-movie-posters-illustration-fight-club-.jpg" Width="160" Height="200"/>
+                        <Image x:Name="estreno5" Source="https://www.quepelivemoshoy.com/wp-content/uploads/2020/11/poster-el-padrino-726x1024.jpg" Width="160" Height="200"/>
+                        <Image x:Name="estreno6" Source="https://www.findelahistoria.com/web/wp-content/uploads/2016/12/postersilence-poster.jpg" Width="160" Height="200"/>
+                        <Image x:Name="estreno7" Source="https://media.posterlounge.com/images/m/1875927.jpg" Width="160" Height="200"/>
+                        <Image x:Name="estreno8" Source="https://m.media-amazon.com/images/I/510XPjWbCDL._AC_UL320_.jpg" Width="160" Height="200"/>
+                        <Image x:Name="estreno9" Source="https://i.blogs.es/7c467d/la-cosa/450_1000.jpg" Width="160" Height="200"/>
+                        <Image x:Name="estreno10" Source="https://i.pinimg.com/236x/84/3c/0d/843c0d1f5e7eda9f3cfa54cb16e0ca03.jpg" Width="160" Height="200"/>
+                    </WrapPanel>
+                </ScrollViewer>
+                <Button Grid.Column="2" Content="adelante" Margin="0,0,10,0" Click="Button_Click_1"/>
+            </Grid>
+            
+            <TextBlock Text="Peliculas recomendadas" Margin="20,20,20,10"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="atras" Margin="10,0,0,0" Click="Button_Click_2"/>
+                <ScrollViewer x:Name="recomendado" Grid.Column="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
+                    <WrapPanel>
+                        <Image x:Name="recomendado1" Source="https://i.pinimg.com/originals/fd/82/c1/fd82c1116eb734b625552241e00e2a20.png" Width="160" Height="200"/>
+                        <Image x:Name="recomendado2" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/caballero-oscuro-joker/7055604-1-esl-ES/CABALLERO-OSCURO-JOKER.jpg" Width="160" Height="200"/>
+                        <Image x:Name="recomendado3" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/cisne-negro/7055592-1-esl-ES/CISNE-NEGRO.jpg?resize=480:*" Width="160" Height="200"/>
+                        <Image x:Name="recomendado4" Source="https://cdn.oldskull.net/wp-content/uploads/2015/07/Flore-Maquin-movie-posters-illustration-fight-club-.jpg" Width="160" Height="200"/>
+                        <Image x:Name="recomendado5" Source="https://www.quepelivemoshoy.com/wp-content/uploads/2020/11/poster-el-padrino-726x1024.jpg" Width="160" Height="200"/>
+                        <Image x:Name="recomendado6" Source="https://www.findelahistoria.com/web/wp-content/uploads/2016/12/postersilence-poster.jpg" Width="160" Height="200"/>
+                        <Image x:Name="recomendado7" Source="https://media.posterlounge.com/images/m/1875927.jpg" Width="160" Height="200"/>
+                        <Image x:Name="recomendado8" Source="https://m.media-amazon.com/images/I/510XPjWbCDL._AC_UL320_.jpg" Width="160" Height="200"/>
+                        <Image x:Name="recomendado9" Source="https://i.blogs.es/7c467d/la-cosa/450_1000.jpg" Width="160" Height="200"/>
+                        <Image x:Name="recomendado10" Source="https://i.pinimg.com/236x/84/3c/0d/843c0d1f5e7eda9f3cfa54cb16e0ca03.jpg" Width="160" Height="200"/>
+                    </WrapPanel>
+                </ScrollViewer>
+                <Button Grid.Column="2" Content="adelante" Margin="0,0,10,0" Click="Button_Click_3"/>
+            </Grid>
+            
+            <TextBlock Text="Series recomendadas" Margin="20,20,20,10"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Content="atras" Margin="10,0,0,0" Click="Button_Click_4"/>
+                <ScrollViewer x:Name="srecomendado" Grid.Column="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
+                    <WrapPanel>
+                        <Image x:Name="srecomendado1" Source="https://i.pinimg.com/originals/fd/82/c1/fd82c1116eb734b625552241e00e2a20.png" Width="160" Height="200"/>
+                        <Image x:Name="srecomendado2" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/caballero-oscuro-joker/7055604-1-esl-ES/CABALLERO-OSCURO-JOKER.jpg" Width="160" Height="200"/>
+                        <Image x:Name="srecomendado3" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/cisne-negro/7055592-1-esl-ES/CISNE-NEGRO.jpg?resize=480:*" Width="160" Height="200"/>
+                        <Image x:Name="srecomendado4" Source="https://cdn.oldskull.net/wp-content/uploads/2015/07/Flore-Maquin-movie-posters-illustration-fight-club-.jpg" Width="160" Height="200"/>
+                        <Image x:Name="srecomendado5" Source="https://www.quepelivemoshoy.com/wp-content/uploads/2020/11/poster-el-padrino-726x1024.jpg" Width="160" Height="200"/>
+                        <Image x:Name="srecomendado6" Source="https://www.findelahistoria.com/web/wp-content/uploads/2016/12/postersilence-poster.jpg" Width="160" Height="200"/>
+                        <Image x:Name="srecomendado7" Source="https://media.posterlounge.com/images/m/1875927.jpg" Width="160" Height="200"/>
+                        <Image x:Name="srecomendado8" Source="https://m.media-amazon.com/images/I/510XPjWbCDL._AC_UL320_.jpg" Width="160" Height="200"/>
+                        <Image x:Name="srecomendado9" Source="https://i.blogs.es/7c467d/la-cosa/450_1000.jpg" Width="160" Height="200"/>
+                        <Image x:Name="srecomendado10" Source="https://i.pinimg.com/236x/84/3c/0d/843c0d1f5e7eda9f3cfa54cb16e0ca03.jpg" Width="160" Height="200"/>
+                    </WrapPanel>
+                </ScrollViewer>
+                <Button Grid.Column="2" Content="adelante" Margin="0,0,10,0" Click="Button_Click_5"/>
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
