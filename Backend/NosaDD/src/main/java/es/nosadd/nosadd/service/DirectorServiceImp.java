@@ -75,5 +75,17 @@ public class DirectorServiceImp implements DirectorService{
         return directorRepository.findAllByValoracion(valoracion);
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public List<Director> findByValoracionGreaterThan(int valoracion) {
+        return directorRepository.findByValoracionGreaterThan(valoracion);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Director> findByValoracionLessThan(int valoracion) {
+        return directorRepository.findByValoracionLessThan(valoracion);
+    }
+
 
 }

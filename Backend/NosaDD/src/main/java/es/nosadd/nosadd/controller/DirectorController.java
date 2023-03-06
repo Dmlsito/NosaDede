@@ -141,4 +141,25 @@ public class DirectorController {
         }
     }
 
+    @GetMapping("/valoracion/mayor/{valoracion}")
+    public ResponseEntity<?> getDirectorByValoracionMayor(@PathVariable int valoracion) {
+        List<Director> directores = directorService.findByValoracionGreaterThan(valoracion);
+        if (directores != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(directores);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errores.ERROR_DIRECTORES_NO_ENCONTRADOS);
+        }
+    }
+
+    @GetMapping("/valoracion/menor/{valoracion}")
+    public ResponseEntity<?> getDirectorByValoracionMenor(@PathVariable int valoracion) {
+        List<Director> directores = directorService.findByValoracionLessThan(valoracion);
+        if (directores != null) {
+            return ResponseEntity.status(HttpStatus.OK).body(directores);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Errores.ERROR_DIRECTORES_NO_ENCONTRADOS);
+        }
+    }
+
+
 }

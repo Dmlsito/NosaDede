@@ -14,5 +14,7 @@ public interface DirectorRepository extends JpaRepository<Director, Integer> {
     List<Director> findAllByNacionalidad(String nacionalidad);
     List<Director> findAllByFechaNacimiento(String fechaNacimiento);
     List<Director> findAllByValoracion(int valoracion);
+    List<Director> findByValoracionGreaterThan(int valoracion);
+    List<Director> findByValoracionLessThan(int valoracion);
 
 }
