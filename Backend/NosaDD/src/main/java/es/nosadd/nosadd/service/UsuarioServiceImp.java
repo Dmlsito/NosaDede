@@ -1,5 +1,6 @@
 package es.nosadd.nosadd.service;
 
+import es.nosadd.nosadd.dto.UsuarioDTO;
 import es.nosadd.nosadd.model.Usuario;
 import es.nosadd.nosadd.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,4 +52,13 @@ public class UsuarioServiceImp  implements UsuarioService{
     public Optional<Usuario> consultarCorreo(String correo) {
         return Optional.empty();
     }
+
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<String> consultarContrasena(UsuarioDTO usuarioDTO, String contrasena){
+
+        return Optional.empty();
+
+    }
+
 }

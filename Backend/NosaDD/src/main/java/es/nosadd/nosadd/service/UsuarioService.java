@@ -1,6 +1,7 @@
 package es.nosadd.nosadd.service;
 
 
+import es.nosadd.nosadd.dto.UsuarioDTO;
 import es.nosadd.nosadd.model.Usuario;
 
 import java.util.List;
@@ -26,5 +27,8 @@ public interface UsuarioService {
 
     // Método para comprobar si existe ya el correo registrado //
     public Optional<Usuario> consultarCorreo(String correo);
+
+    // Método para comprobar la contrasena del usuario
+    public Optional<String> consultarContrasena(UsuarioDTO usuarioDTO, String contrasena);
 
 }

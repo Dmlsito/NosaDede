@@ -46,6 +46,27 @@ public class UsuarioController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
 
+    }
+
+    @PostMapping
+    @Operation(summary = "Comprobar la Contrasena")
+    @RequestMapping("/api/Usuarios/contrasena")
+    public ResponseEntity<?> comprobarContrasena(@RequestBody UsuarioDTO usuarioDTO) {
+
+        // Primero compruebo si ya existe este Correo Electrónico registrado //
+        Optional<String> contrasenaConsultada = usuarioService.consultarContrasena(usuarioDTO, usuarioDTO.getContrasena());
+
+        // Segundo compruebo si ya existe este Nombre de Usuario registrado //
+
+        // Si no existe ni el correo ni el nombre de usuario lo inserto //
+        if (!contrasenaConsultada.isPresent()) {
+
+            return ResponseEntity.status(HttpStatus.CREATED).body(contrasenaConsultada);
+
+        } else {
+            ErrorDTO errorDTO = new ErrorDTO(Errores.COD_ERROR_DUPLICADO,Errores.MEN_ERROR_DUPLICADO);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+        }
 
     }
 }
