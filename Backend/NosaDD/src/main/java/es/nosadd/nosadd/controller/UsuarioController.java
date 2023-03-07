@@ -26,7 +26,7 @@ public class UsuarioController {
 
     @PostMapping
     @Operation(summary = "Insertar un Usuario")
-    @RequestMapping("/api/Usuarios/Register")
+    @RequestMapping("/Register")
     public ResponseEntity<?> guardarUsuario(@RequestBody UsuarioDTO usuarioDTO) {
 
         // Primero compruebo si ya existe este Correo Electrónico registrado //
@@ -34,7 +34,7 @@ public class UsuarioController {
 
         // Segundo compruebo si ya existe este Nombre de Usuario registrado //
         Optional<Usuario> usuarioConsultandoNombreUser = usuarioService.consultarNombreUser(usuarioDTO.getNombreUsuario());
-
+        /*
         // Si no existe ni el correo ni el nombre de usuario lo inserto //
         if (!usuarioConsultandoCorreo.isPresent() && !usuarioConsultandoNombreUser.isPresent()) {
 
@@ -45,7 +45,9 @@ public class UsuarioController {
             ErrorDTO errorDTO = new ErrorDTO(Errores.COD_ERROR_DUPLICADO,Errores.MEN_ERROR_DUPLICADO);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
-
+          */
+        Usuario usuarioGuardado = usuarioService.save(usuarioDTO.fromDTO());
+        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioGuardado);
     }
 
     @PostMapping

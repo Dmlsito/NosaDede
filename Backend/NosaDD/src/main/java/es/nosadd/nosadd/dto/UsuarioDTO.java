@@ -32,15 +32,16 @@ public class UsuarioDTO {
         return this;
 
     }
-    // Método para transformar de usuarioDTO a usario //
+    // Método para transformar de usuarioDTO a usuario //
     public Usuario fromDTO(){
         Usuario usuario = new Usuario();
-        usuario.setId(this.getId());
-        usuario.setNombre(this.getNombre());
-        usuario.setApellidos(this.getApellidos());
-        usuario.setImagenUsuario(this.getImagenUsuario());
-        usuario.setCorreoElectronico(this.getCorreoElectronico());
-        usuario.setContrasena(this.getContrasena());
+        usuario.setId(this.id);
+        usuario.setNombre(this.nombre);
+        usuario.setApellidos(this.apellidos);
+        usuario.setImagenUsuario(this.imagenUsuario);
+        usuario.setNombreUsuario(this.nombreUsuario);
+        usuario.setCorreoElectronico(this.correoElectronico);
+        usuario.setContrasena(this.contrasena);
 
         return usuario;
 
