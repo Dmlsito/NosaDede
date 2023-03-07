@@ -14,7 +14,7 @@ public class UsuarioDTO {
     private int id;
     private String nombre;
     private String apellidos;
-    private String nombreUsuario;
+    private String nombre_Usuario;
     private String imagenUsuario;
     private String correoElectronico;
     private String contrasena;
@@ -25,7 +25,7 @@ public class UsuarioDTO {
         this.setId(usuario.getId());
         this.setNombre(usuario.getNombre());
         this.setApellidos(usuario.getApellidos());
-        this.setNombreUsuario(usuario.getNombreUsuario());
+        this.setNombre_Usuario(usuario.getNombreUsuario());
         this.setImagenUsuario(usuario.getImagenUsuario());
         this.setCorreoElectronico(usuario.getCorreoElectronico());
         this.setContrasena(usuario.getContrasena());
@@ -39,7 +39,7 @@ public class UsuarioDTO {
         usuario.setNombre(this.nombre);
         usuario.setApellidos(this.apellidos);
         usuario.setImagenUsuario(this.imagenUsuario);
-        usuario.setNombreUsuario(this.nombreUsuario);
+        usuario.setNombreUsuario(this.nombre_Usuario);
         usuario.setCorreoElectronico(this.correoElectronico);
         usuario.setContrasena(this.contrasena);
 

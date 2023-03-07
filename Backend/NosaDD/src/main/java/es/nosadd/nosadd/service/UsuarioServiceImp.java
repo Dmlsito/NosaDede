@@ -25,8 +25,8 @@ public class UsuarioServiceImp  implements UsuarioService{
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<Usuario> consultarNombreUser(String nombreUser) {
-        return Optional.empty();
+    public Usuario consultarNombreUser(String nombreUser) {
+        return usuarioRepository.findByNombreUsuario(nombreUser);
     }
 
     @Override
@@ -55,10 +55,13 @@ public class UsuarioServiceImp  implements UsuarioService{
 
     @Override
     @Transactional(readOnly = true)
-    public Optional<String> consultarContrasena(UsuarioDTO usuarioDTO, String contrasena){
-
+    public Optional<String> findByContrasena(UsuarioDTO usuarioDTO,String contrasena) {
         return Optional.empty();
-
     }
 
+    @Override
+    @Transactional
+    public void deleteByNombreUsuario(String nombreUsuario){
+        usuarioRepository.deleteByNombreUsuario(nombreUsuario);
+    }
 }

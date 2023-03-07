@@ -22,6 +22,7 @@ public class Existos {
         public static final String GENEROSPELICULAS_CREADO = "GenerosPeliculas creado";
         public static final String GENEROSPELICULAS_EDITADO = "GenerosPeliculas editado";
         public static final String CONTRASENA_EXISTE  = "Contraseña Correcta";
+        public static final String USUARIO_ELIMINADO  = "Usuario Eliminado";
 
 }
 

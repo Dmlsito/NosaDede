@@ -15,10 +15,15 @@ public interface UsuarioRepository extends JpaRepositoryImplementation<Usuario,I
     List<Usuario> findByNombreContains(String nombre);
 
     // Método para encontrar usuarios que su nombre sea exactamente igual al guardado en la base de datos //
-    Optional<Usuario> findByNombre(String nombre);
+    Usuario findByNombreUsuario(String nombreUsuario);
 
     // Método para comprobar que la contraseña del usuario sea correcta //
-    Optional<Usuario> findByContrasena(String contrasena);
+    Optional<String> findByContrasena(String contrasena);
+
+    // Método para eliminar un usuario //
+    void deleteByNombreUsuario(String nombreUsuario);
+
+
 
 
 }

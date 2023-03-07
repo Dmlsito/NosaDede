@@ -16,11 +16,22 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
+    @Column(name = "Nombre")
     private String nombre;
+
+    @Column(name = "Apellidos")
     private String apellidos;
+
+    @Column(name = "Nombre_Usuario")
     private String nombreUsuario;
+
+    @Column(name = "Imagen_Usuario")
     private String imagenUsuario;
+
+    @Column(name = "Correo_Electronico")
     private String correoElectronico;
+
+    @Column(name = "Contrasena")
     private String contrasena;
 
 }

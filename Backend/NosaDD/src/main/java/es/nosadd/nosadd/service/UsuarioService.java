@@ -14,7 +14,7 @@ public interface UsuarioService {
     public Optional<Usuario> consultar(String nombre);
 
     // Método para buscar si existe un nombre de usuario //
-    public Optional<Usuario> consultarNombreUser (String nombreUser);
+    public Usuario consultarNombreUser (String nombreUser);
 
     //Método para guardar el usuario en la bbdd //
      public Usuario save(Usuario usuario);
@@ -28,7 +28,10 @@ public interface UsuarioService {
     // Método para comprobar si existe ya el correo registrado //
     public Optional<Usuario> consultarCorreo(String correo);
 
-    // Método para comprobar la contrasena del usuario
-    public Optional<String> consultarContrasena(UsuarioDTO usuarioDTO, String contrasena);
+    // Método para comprobar contraseña //
+    public Optional<String> findByContrasena(UsuarioDTO usuarioDTO,String contrasena);
+
+    // Método para borrar el usuario //
+    public void deleteByNombreUsuario(String nombreUsuario);
 
 }
