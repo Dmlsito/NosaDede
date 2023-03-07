@@ -22,9 +22,8 @@ public class UsuarioController {
     private UsuarioService usuarioService;
 
 
-    @PostMapping
-    @Operation(summary = "Insertar un Usuario")
-    @RequestMapping("/Register")
+    @PostMapping("/Register")
+    //@Operation(summary = "Insertar un Usuario")
     public ResponseEntity<?> guardarUsuario(@RequestBody UsuarioDTO usuarioDTO) {
 
         // Primero compruebo si ya existe este Correo Electrónico registrado //
@@ -46,9 +45,9 @@ public class UsuarioController {
 
     }
 
-    @GetMapping
-    @Operation(summary = "Retorna la Contrasena para matchearla con la introducida en el login")
-    @RequestMapping("/contrasena")
+    @GetMapping("/contrasena")
+    //@Operation(summary = "Retorna la Contrasena para matchearla con la introducida en el login")
+
     public ResponseEntity<?> comprobarContrasena(@RequestBody UsuarioDTO usuarioDTO) {
 
         Usuario usuarioConsultado = usuarioService.consultarNombreUser(usuarioDTO.getNombre_Usuario());
@@ -60,9 +59,9 @@ public class UsuarioController {
         }
     }
 
-    @GetMapping
-    @Operation(summary = "Retorna la Contrasena para matchearla con la introducida en el login")
-    @RequestMapping("/usuario/nombre/{nombreUser}")
+    @GetMapping("/usuario/nombre/{nombreUser}")
+    //@Operation(summary = "Retorna la Contrasena para matchearla con la introducida en el login")
+
     public ResponseEntity<?> comprobarContrasena(@PathVariable String nombreUser) {
 
         Usuario usuarioConsultado = usuarioService.consultarNombreUser(nombreUser);
@@ -75,9 +74,8 @@ public class UsuarioController {
 
     }
 
-    @DeleteMapping
-    @Operation(summary = "Eliminar Usuario")
-    @RequestMapping("/usuario/nombre/borrar/{nombreUser}")
+    @DeleteMapping("/usuario/nombre/borrar/{nombreUser}")
+    //@Operation(summary = "Eliminar Usuario")
     public ResponseEntity<?> borrarUsuario(@PathVariable String nombreUser) {
 
 
@@ -91,9 +89,8 @@ public class UsuarioController {
 
     }
     // Actualizar usuario
-    @PutMapping
-    @Operation(summary = "Actualizar Nombre Usuario")
-    @RequestMapping("/actualizar/{nombreUser}")
+    @PutMapping("/actualizar/{nombreUser}")
+    //@Operation(summary = "Actualizar Nombre Usuario")
     public ResponseEntity<?> actualizarUsuario(@PathVariable String nombreUser,@RequestBody UsuarioDTO usuarioDTO) {
 
         Usuario usuarioConsultado = usuarioService.consultarNombreUser(nombreUser);
