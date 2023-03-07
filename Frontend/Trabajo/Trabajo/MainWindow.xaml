@@ -5,11 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trabajo"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Canvas>
-        <Image Stretch="Fill" Source= "https://raw.githubusercontent.com/Dmlsito/NosaDede/master/Documentacion/logo_nosadede.png" Width="1100" Height="600" Canvas.Bottom= "650" Canvas.Left="430" ></Image>
-        <Button Height="50" Width="300" Canvas.Left="800" Canvas.Top="250">Inicar sesion</Button>
-        <Button Height="50" Width="300" Canvas.Left="800" Canvas.Top="350">Registrarse</Button>
-        
-    </Canvas>
+        Title="MainWindow" Height="1080
+        " Width="1980">
+
+    <Grid>
+
+        <Image Stretch="Fill" Source= "C:\Users\FP\Documents\Github\NosaDede\Frontend\Trabajo\Trabajo\Images\logo_nosadede.png" Width="1100" Height="600" Margin="-291,-225,1171,689" ></Image>
+        <Button Margin="840,473,1028,561">Inicar sesion</Button>
+        <Button Margin="990,470,878,568" Height="15">Registrarse</Button>
+        <TextBox HorizontalAlignment="Left" Margin="896,357,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="896,380,0,0" VerticalAlignment="Top" Width="120" Height/>
+
+
+    </Grid>
+
 </Window>
