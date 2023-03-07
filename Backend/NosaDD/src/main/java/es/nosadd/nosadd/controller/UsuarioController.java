@@ -5,7 +5,7 @@ import es.nosadd.nosadd.dto.UsuarioDTO;
 import es.nosadd.nosadd.model.Usuario;
 import es.nosadd.nosadd.service.UsuarioService;
 import es.nosadd.nosadd.util.Errores;
-import es.nosadd.nosadd.util.Existos;
+import es.nosadd.nosadd.util.Exitos;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -83,7 +83,7 @@ public class UsuarioController {
 
         if(nombreUser!=null){
             usuarioService.deleteByNombreUsuario(nombreUser);
-            return ResponseEntity.status(HttpStatus.OK).body(Existos.USUARIO_ELIMINADO);
+            return ResponseEntity.status(HttpStatus.OK).body(Exitos.USUARIO_ELIMINADO);
         }else {
             ErrorDTO errorDTO = new ErrorDTO(Errores.COD_ERROR_DUPLICADO,Errores.MEN_ERROR_DUPLICADO);
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorDTO);

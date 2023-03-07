@@ -4,7 +4,6 @@ import es.nosadd.nosadd.dto.SerieDTO;
 import es.nosadd.nosadd.model.Serie;
 import es.nosadd.nosadd.service.SerieService;
 import es.nosadd.nosadd.util.Errores;
-import es.nosadd.nosadd.util.Exitos;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
