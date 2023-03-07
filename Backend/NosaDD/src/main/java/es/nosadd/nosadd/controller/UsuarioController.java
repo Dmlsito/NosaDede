@@ -6,7 +6,6 @@ import es.nosadd.nosadd.model.Usuario;
 import es.nosadd.nosadd.service.UsuarioService;
 import es.nosadd.nosadd.util.Errores;
 import es.nosadd.nosadd.util.Exitos;
-import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
