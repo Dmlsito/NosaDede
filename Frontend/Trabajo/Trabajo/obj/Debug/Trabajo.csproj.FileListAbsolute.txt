@@ -50,3 +50,5 @@ C:\Users\FP\Documents\GitHub\NosaDede\Frontend\Trabajo\Trabajo\obj\Debug\Trabajo
 C:\Users\FP\Documents\GitHub\NosaDede\Frontend\Trabajo\Trabajo\obj\Debug\Trabajo.csproj.CoreCompileInputs.cache
 C:\Users\FP\Documents\GitHub\NosaDede\Frontend\Trabajo\Trabajo\obj\Debug\Trabajo.exe
 C:\Users\FP\Documents\GitHub\NosaDede\Frontend\Trabajo\Trabajo\obj\Debug\Trabajo.pdb
+C:\Users\FP\Documents\GitHub\NosaDede\Frontend\Trabajo\Trabajo\obj\Debug\Detalles.g.cs
+C:\Users\FP\Documents\GitHub\NosaDede\Frontend\Trabajo\Trabajo\obj\Debug\Detalles.baml

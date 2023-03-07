@@ -1,0 +1,61 @@
+﻿<Window x:Class="Trabajo.Detalles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Trabajo"
+        mc:Ignorable="d"
+        Title="Detalles" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="10*"/>
+                <RowDefinition Height="90*"/>
+            </Grid.RowDefinitions>
+            <WrapPanel Background="Red">
+                <TextBlock Text="LOGO" FontSize="40" Margin="10,10,20,0" FontWeight="Bold"/>
+                <TextBlock Text="Inicio"  Margin="10,10,10,0"/>
+                <TextBlock Text="Peliculas" Margin="10,10,10,0"/>
+                <TextBlock Text="Series" Margin="10,10,20,0"/>
+                <TextBox Text="buscar" Height="20" Width="200" Margin="250,0,0,0"/>
+            </WrapPanel>
+        <ScrollViewer  Grid.Row="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="350"/>
+                    <RowDefinition Height="20*"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="https://wallpapersmug.com/download/1600x900/cce793/movie-poster-of-john-wick-3.jpg" Stretch="UniformToFill"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="60*"/>
+                        <ColumnDefinition Width="40*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel  Margin="10,0,0,0" VerticalAlignment="Bottom" Background="#99000000" >
+                        <WrapPanel>
+                            <TextBlock Text="TITULO JOHN WICK" FontSize="40" FontWeight="Bold" Foreground="White"/>
+                            <TextBlock Text="8.0" FontSize="35" FontWeight="Bold" Foreground="White" Margin="20,0,0,0" VerticalAlignment="Bottom"/>
+                        </WrapPanel>
+                        <WrapPanel>
+                            <TextBlock Text="2019" FontSize="15" FontWeight="Bold" Foreground="White" Margin="0,10,0,5"/>
+                            <TextBlock Text="duracion: 1:45:00 " FontSize="15" FontWeight="Bold" Foreground="White" Margin="10,10,0,5"/>
+                        </WrapPanel>
+                        <TextBlock Text="En este nuevo capítulo que continúa el éxito de 2014,el legendario sicario John Wick (Keanu Reeves) se ve forzado a abandonar su retiro por un antiguo socio que trama con el control de una siniestra cofradía internacional de asesinosObligado a ayudar por un juramento de sangre, John viaja a Romadonde se enfrentará a algunos de los asesinos más letales del mundo."  
+                               Foreground="White" TextWrapping="Wrap" HorizontalAlignment="Left" />
+                    </StackPanel>
+                </Grid>
+                
+                <StackPanel Grid.Row="1">
+                    <TextBlock  Text="actor 1" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+                    <TextBlock  Text="actor 1" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+                    <TextBlock  Text="actor 1" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+                    <TextBlock  Text="actor 1" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+                    <TextBlock  Text="actor 1" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+                    <TextBlock  Text="actor 1" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+                    <TextBlock  Text="actor 1" FontSize="40" FontWeight="Bold" Foreground="Black"/>
+                </StackPanel>
+            </Grid>
+
+        </ScrollViewer>
+    </Grid>
+</Window>

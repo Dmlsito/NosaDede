@@ -25,6 +25,9 @@ namespace Trabajo
         public principal()
         {
             InitializeComponent();
+            if (estreno1.IsMouseCaptured) { 
+            
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -83,6 +86,18 @@ namespace Trabajo
             }
 
             srecomendado.ScrollToHorizontalOffset(scroll2);
+        }
+
+        private void estreno1_MouseEnter(object sender, MouseEventArgs e)
+        {
+            datosEstrenos1.Visibility = Visibility.Visible;
+            notaEstreno1.Visibility = Visibility.Visible;
+        }
+
+        private void estreno1_MouseLeave(object sender, MouseEventArgs e)
+        {
+            datosEstrenos1.Visibility = Visibility.Hidden;
+            notaEstreno1.Visibility = Visibility.Hidden;
         }
     }
 }

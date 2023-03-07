@@ -17,6 +17,7 @@
             <TextBlock Text="Peliculas" Margin="10,10,10,0"/>
             <TextBlock Text="Series" Margin="10,10,20,0"/>
             <TextBox Text="buscar" Height="20" Width="200" Margin="250,0,0,0"/>
+            
         </WrapPanel>
         <StackPanel Grid.Row="1">
             <TextBlock Text="Estrenos recientes" Margin="20,20,20,10"/>
@@ -30,16 +31,141 @@
                 <ScrollViewer x:Name="scestreno" Grid.Column="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
                     <WrapPanel>
                         <!-- pendiente de poner los bordes redondeados y algo cuando pases al raton por encima-->
-                        <Image x:Name="estreno1" Source="https://i.pinimg.com/originals/fd/82/c1/fd82c1116eb734b625552241e00e2a20.png" Width="160" Height="200"/>
-                        <Image x:Name="estreno2" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/caballero-oscuro-joker/7055604-1-esl-ES/CABALLERO-OSCURO-JOKER.jpg" Width="160" Height="200"/>
-                        <Image x:Name="estreno3" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/cisne-negro/7055592-1-esl-ES/CISNE-NEGRO.jpg?resize=480:*" Width="160" Height="200"/>
-                        <Image x:Name="estreno4" Source="https://cdn.oldskull.net/wp-content/uploads/2015/07/Flore-Maquin-movie-posters-illustration-fight-club-.jpg" Width="160" Height="200"/>
-                        <Image x:Name="estreno5" Source="https://www.quepelivemoshoy.com/wp-content/uploads/2020/11/poster-el-padrino-726x1024.jpg" Width="160" Height="200"/>
-                        <Image x:Name="estreno6" Source="https://www.findelahistoria.com/web/wp-content/uploads/2016/12/postersilence-poster.jpg" Width="160" Height="200"/>
-                        <Image x:Name="estreno7" Source="https://media.posterlounge.com/images/m/1875927.jpg" Width="160" Height="200"/>
-                        <Image x:Name="estreno8" Source="https://m.media-amazon.com/images/I/510XPjWbCDL._AC_UL320_.jpg" Width="160" Height="200"/>
-                        <Image x:Name="estreno9" Source="https://i.blogs.es/7c467d/la-cosa/450_1000.jpg" Width="160" Height="200"/>
-                        <Image x:Name="estreno10" Source="https://i.pinimg.com/236x/84/3c/0d/843c0d1f5e7eda9f3cfa54cb16e0ca03.jpg" Width="160" Height="200"/>
+                        <!-- recomendacionEstrenos estreno1 tituloEstreno1 añoEstreno1 calificacionEstreno1-->
+                    
+                        <!-- Recomendacion estreno 1 -->
+                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
+                            <!-- Poster-->
+                            <Image x:Name="estreno1" Source="https://i.pinimg.com/originals/fd/82/c1/fd82c1116eb734b625552241e00e2a20.png" Width="160" Height="200" MouseEnter="estreno1_MouseEnter" MouseLeave="estreno1_MouseLeave">
+                                
+                            </Image>
+                            <StackPanel x:Name="datosEstrenos1" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
+                                <!-- Año-->
+                                <TextBlock Text="2013" Foreground="White"/>
+                                <!-- Titulo-->
+                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
+
+                            </StackPanel>
+                            <TextBlock x:Name="notaEstreno1" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
+                        </Canvas>
+
+                        <!-- Recomendacion estreno 2 -->
+                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
+                            <!-- Poster-->
+                            <Image x:Name="estreno2" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/caballero-oscuro-joker/7055604-1-esl-ES/CABALLERO-OSCURO-JOKER.jpg" Width="160" Height="200"/>
+                            <StackPanel x:Name="datosEstrenos2" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
+                                <!-- Año-->
+                                <TextBlock Text="2013" Foreground="White"/>
+                                <!-- Titulo-->
+                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <TextBlock x:Name="notaEstreno2" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
+                        </Canvas>
+
+                        <!-- Recomendacion estreno 3 -->
+                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
+                            <!-- Poster-->
+                            <Image x:Name="estreno3" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/cisne-negro/7055592-1-esl-ES/CISNE-NEGRO.jpg?resize=480:*" Width="160" Height="200"/>
+                            <StackPanel x:Name="datosEstrenos3" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
+                                <!-- Año-->
+                                <TextBlock Text="2013" Foreground="White"/>
+                                <!-- Titulo-->
+                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <TextBlock x:Name="notaEstreno3" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
+                        </Canvas>
+
+                        <!-- Recomendacion estreno 4 -->
+                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
+                            <!-- Poster-->
+                            <Image x:Name="estreno4" Source="https://cdn.oldskull.net/wp-content/uploads/2015/07/Flore-Maquin-movie-posters-illustration-fight-club-.jpg" Width="160" Height="200"/>
+                            <StackPanel x:Name="datosEstrenos4" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
+                                <!-- Año-->
+                                <TextBlock Text="2013" Foreground="White"/>
+                                <!-- Titulo-->
+                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <TextBlock x:Name="notaEstreno4" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
+                        </Canvas>
+
+                        <!-- Recomendacion estreno 5 -->
+                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
+                            <!-- Poster-->
+                            <Image x:Name="estreno5" Source="https://www.quepelivemoshoy.com/wp-content/uploads/2020/11/poster-el-padrino-726x1024.jpg" Width="160" Height="200"/>
+                            <StackPanel x:Name="datosEstrenos5" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
+                                <!-- Año-->
+                                <TextBlock Text="2013" Foreground="White"/>
+                                <!-- Titulo-->
+                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <TextBlock x:Name="notaEstreno5" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
+                        </Canvas>
+
+                        <!-- Recomendacion estreno 6 -->
+                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
+                            <!-- Poster-->
+                            <Image x:Name="estreno6" Source="https://www.findelahistoria.com/web/wp-content/uploads/2016/12/postersilence-poster.jpg" Width="160" Height="200"/>
+                            <StackPanel x:Name="datosEstrenos6" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
+                                <!-- Año-->
+                                <TextBlock Text="2013" Foreground="White"/>
+                                <!-- Titulo-->
+                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <TextBlock x:Name="notaEstreno6" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
+                        </Canvas>
+
+                        <!-- Recomendacion estreno 7 -->
+                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
+                            <!-- Poster-->
+                            <Image x:Name="estreno7" Source="https://media.posterlounge.com/images/m/1875927.jpg" Width="160" Height="200"/>
+                            <StackPanel x:Name="datosEstrenos7" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
+                                <!-- Año-->
+                                <TextBlock Text="2013" Foreground="White"/>
+                                <!-- Titulo-->
+                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <TextBlock x:Name="notaEstreno7" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
+                        </Canvas>
+
+                        <!-- Recomendacion estreno 8 -->
+                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
+                            <!-- Poster-->
+                            <Image x:Name="estreno8" Source="https://m.media-amazon.com/images/I/510XPjWbCDL._AC_UL320_.jpg" Width="160" Height="200"/>
+                            <StackPanel x:Name="datosEstrenos8" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
+                                <!-- Año-->
+                                <TextBlock Text="2013" Foreground="White"/>
+                                <!-- Titulo-->
+                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <TextBlock x:Name="notaEstreno8" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
+                        </Canvas>
+
+                        <!-- Recomendacion estreno 9 -->
+                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
+                            <!-- Poster-->
+                            <Image x:Name="estreno9" Source="https://i.blogs.es/7c467d/la-cosa/450_1000.jpg" Width="160" Height="200"/>
+                            <StackPanel x:Name="datosEstrenos9" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
+                                <!-- Año-->
+                                <TextBlock Text="2013" Foreground="White"/>
+                                <!-- Titulo-->
+                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <TextBlock x:Name="notaEstreno9" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
+                        </Canvas>
+
+                        <!-- Recomendacion estreno 10 -->
+                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
+                            <!-- Poster-->
+                            <Image x:Name="estreno10" Source="https://i.pinimg.com/236x/84/3c/0d/843c0d1f5e7eda9f3cfa54cb16e0ca03.jpg" Width="160" Height="200"/>
+                            <StackPanel x:Name="datosEstrenos10" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
+                                <!-- Año-->
+                                <TextBlock Text="2013" Foreground="White"/>
+                                <!-- Titulo-->
+                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
+                            </StackPanel>
+                            <TextBlock x:Name="notaEstreno10" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
+                        </Canvas>
+                        
                     </WrapPanel>
                 </ScrollViewer>
                 <Button Grid.Column="2" Content="adelante" Margin="0,0,10,0" Click="Button_Click_1"/>
