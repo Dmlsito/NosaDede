@@ -18,5 +18,7 @@
         <mapping class="org.example.Pelicula"/>
         <mapping class="org.example.Genero"/>
         <mapping class="org.example.GenerosPeliculas"/>
+        <mapping class="org.example.Director"/>
+        <mapping class="org.example.Actor"/>
     </session-factory>
 </hibernate-configuration>
