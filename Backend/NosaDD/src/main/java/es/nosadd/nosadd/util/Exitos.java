@@ -29,6 +29,10 @@ public class Exitos {
         public static final String ACTORESSERIES_ELIMINADO = "ActoresSeries eliminado";
         public static final String ACTORESSERIES_CREADO = "ActoresSeries creado";
         public static final String ACTORESSERIES_EDITADO = "ActoresSeries editado";
+        public static final String DIRECTORESPELICULAS_ELIMINADO = "DirectoresPeliculas eliminado";
+        public static final String DIRECTORESPELICULAS_CREADO = "DirectoresPeliculas creado";
+        public static final String DIRECTORESPELICULAS_EDITADO = "DirectoresPeliculas editado";
+
 
 }
 
