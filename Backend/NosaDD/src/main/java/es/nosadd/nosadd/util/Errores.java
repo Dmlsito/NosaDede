@@ -35,5 +35,7 @@ public class Errores {
     public static final String ERROR_DIRECTORESSERIES_NO_ENCONTRADOS = "No se han encontrado directoresSeries";
     public static final String ERROR_DIRECTORESSERIES_NO_ENCONTRADO = "No se ha encontrado el directorSerie";
     public static final String ERROR_DIRECTORESSERIES_YA_EXISTE = "El directorSerie ya existe";
-
+    public static final String ERROR_GENEROSSERIES_NO_ENCONTRADOS = "No se han encontrado generosSeries";
+    public static final String ERROR_GENEROSSERIES_NO_ENCONTRADO = "No se ha encontrado el generoSerie";
+    public static final String ERROR_GENEROSSERIES_YA_EXISTE = "El generoSerie ya existe";
 }
