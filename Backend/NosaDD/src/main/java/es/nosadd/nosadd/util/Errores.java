@@ -32,4 +32,8 @@ public class Errores {
     public static final String ERROR_DIRECTORESPELICULAS_NO_ENCONTRADOS = "No se han encontrado directoresPeliculas";
     public static final String ERROR_DIRECTORESPELICULAS_NO_ENCONTRADO = "No se ha encontrado el directorPelicula";
     public static final String ERROR_DIRECTORESPELICULAS_YA_EXISTE = "El directorPelicula ya existe";
+    public static final String ERROR_DIRECTORESSERIES_NO_ENCONTRADOS = "No se han encontrado directoresSeries";
+    public static final String ERROR_DIRECTORESSERIES_NO_ENCONTRADO = "No se ha encontrado el directorSerie";
+    public static final String ERROR_DIRECTORESSERIES_YA_EXISTE = "El directorSerie ya existe";
+
 }
