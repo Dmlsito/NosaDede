@@ -29,8 +29,6 @@ public class Pelicula {
     private String imagenPelicula;
 
 
-
-
     public Pelicula(String titulo, String duracion, String resumen, int valoracion, String imagenPelicula) {
         this.titulo = titulo;
         this.duracion = duracion;

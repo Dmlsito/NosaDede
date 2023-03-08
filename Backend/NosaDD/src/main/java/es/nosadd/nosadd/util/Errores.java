@@ -26,4 +26,7 @@ public class Errores {
     public static final String ERROR_ACTORESPELICULAS_NO_ENCONTRADOS = "No se han encontrado actoresPeliculas";
     public static final String ERROR_ACTORESPELICULAS_NO_ENCONTRADO = "No se ha encontrado el actorPelicula";
     public static final String ERROR_ACTORESPELICULAS_YA_EXISTE = "El actorPelicula ya existe";
+    public static final String ERROR_ACTORESSERIES_NO_ENCONTRADOS = "No se han encontrado actoresSeries";
+    public static final String ERROR_ACTORESSERIES_NO_ENCONTRADO = "No se ha encontrado el actorSerie";
+    public static final String ERROR_ACTORESSERIES_YA_EXISTE = "El actorSerie ya existe";
 }
