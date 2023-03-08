@@ -23,6 +23,9 @@ public class Exitos {
         public static final String GENEROSPELICULAS_EDITADO = "GenerosPeliculas editado";
         public static final String CONTRASENA_EXISTE  = "Contraseña Correcta";
         public static final String USUARIO_ELIMINADO  = "Usuario Eliminado";
+        public static final String ACTORESPELICULAS_ELIMINADO = "ActoresPeliculas eliminado";
+        public static final String ACTORESPELICULAS_CREADO = "ActoresPeliculas creado";
+        public static final String ACTORESPELICULAS_EDITADO = "ActoresPeliculas editado";
 
 }
 

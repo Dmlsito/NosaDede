@@ -23,4 +23,7 @@ public class Errores {
     public static final String ERROR_GENEROSPELICULAS_NO_ENCONTRADOS = "No se han encontrado generosPeliculas";
     public static final String ERROR_GENEROSPELICULAS_NO_ENCONTRADO = "No se ha encontrado el generoPelicula";
     public static final String ERROR_GENEROSPELICULAS_YA_EXISTE = "El generoPelicula ya existe";
+    public static final String ERROR_ACTORESPELICULAS_NO_ENCONTRADOS = "No se han encontrado actoresPeliculas";
+    public static final String ERROR_ACTORESPELICULAS_NO_ENCONTRADO = "No se ha encontrado el actorPelicula";
+    public static final String ERROR_ACTORESPELICULAS_YA_EXISTE = "El actorPelicula ya existe";
 }
