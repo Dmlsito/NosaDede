@@ -23,4 +23,19 @@ public class Errores {
     public static final String ERROR_GENEROSPELICULAS_NO_ENCONTRADOS = "No se han encontrado generosPeliculas";
     public static final String ERROR_GENEROSPELICULAS_NO_ENCONTRADO = "No se ha encontrado el generoPelicula";
     public static final String ERROR_GENEROSPELICULAS_YA_EXISTE = "El generoPelicula ya existe";
+    public static final String ERROR_ACTORESPELICULAS_NO_ENCONTRADOS = "No se han encontrado actoresPeliculas";
+    public static final String ERROR_ACTORESPELICULAS_NO_ENCONTRADO = "No se ha encontrado el actorPelicula";
+    public static final String ERROR_ACTORESPELICULAS_YA_EXISTE = "El actorPelicula ya existe";
+    public static final String ERROR_ACTORESSERIES_NO_ENCONTRADOS = "No se han encontrado actoresSeries";
+    public static final String ERROR_ACTORESSERIES_NO_ENCONTRADO = "No se ha encontrado el actorSerie";
+    public static final String ERROR_ACTORESSERIES_YA_EXISTE = "El actorSerie ya existe";
+    public static final String ERROR_DIRECTORESPELICULAS_NO_ENCONTRADOS = "No se han encontrado directoresPeliculas";
+    public static final String ERROR_DIRECTORESPELICULAS_NO_ENCONTRADO = "No se ha encontrado el directorPelicula";
+    public static final String ERROR_DIRECTORESPELICULAS_YA_EXISTE = "El directorPelicula ya existe";
+    public static final String ERROR_DIRECTORESSERIES_NO_ENCONTRADOS = "No se han encontrado directoresSeries";
+    public static final String ERROR_DIRECTORESSERIES_NO_ENCONTRADO = "No se ha encontrado el directorSerie";
+    public static final String ERROR_DIRECTORESSERIES_YA_EXISTE = "El directorSerie ya existe";
+    public static final String ERROR_GENEROSSERIES_NO_ENCONTRADOS = "No se han encontrado generosSeries";
+    public static final String ERROR_GENEROSSERIES_NO_ENCONTRADO = "No se ha encontrado el generoSerie";
+    public static final String ERROR_GENEROSSERIES_YA_EXISTE = "El generoSerie ya existe";
 }
