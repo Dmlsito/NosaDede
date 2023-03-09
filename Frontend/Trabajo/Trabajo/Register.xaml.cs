@@ -10,33 +10,36 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Trabajo
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para Register.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Register : Window
     {
-        public MainWindow()
+        public Register()
         {
-            
             InitializeComponent();
-           
             userBox.Text = "Usuario";
-
             userBox.GotFocus += RemoveTextUser;
             userBox.LostFocus += AddTextUser;
 
+            emailBox.Text = "E-mail";
+            emailBox.GotFocus += RemoveTextEmail;
+            emailBox.LostFocus += AddTextEmail;
+
 
             passBox.Text = "Contraseña";
-
             passBox.GotFocus += RemoveTextPass;
             passBox.LostFocus += AddTextPass;
-        }
 
+
+            rePassBox.Text = "Repetir Contraseña";
+            rePassBox.GotFocus += RemoveTextRePass;
+            rePassBox.LostFocus += AddTextRePass;
+        }
         public void RemoveTextUser(object sender, EventArgs e)
         {
             if (userBox.Text == "Usuario")
@@ -50,6 +53,22 @@ namespace Trabajo
             if (string.IsNullOrWhiteSpace(userBox.Text))
                 userBox.Text = "Usuario";
 
+        }
+
+        public void RemoveTextEmail(object sender, EventArgs e)
+        {
+
+            if (emailBox.Text == "E-mail")
+            {
+                emailBox.Text = "";
+            }
+        }
+
+        public void AddTextEmail(object sender, EventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(emailBox.Text))
+                emailBox.Text = "E-mail";
         }
 
         public void RemoveTextPass(object sender, EventArgs e)
@@ -68,30 +87,31 @@ namespace Trabajo
                 passBox.Text = "Contraseña";
         }
 
-        /*private void mostrarPantallaRegistro(object sender, EventArgs e) {
-
-            Register registro = new Register();
-            registro.Show();
-        }
-        */
-
-
-        //Boton de iniciar sesion
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void RemoveTextRePass(object sender, EventArgs e)
         {
 
+            if (rePassBox.Text == "Repetir Contraseña")
+            {
+                rePassBox.Text = "";
+            }
         }
 
-        private void mostrarPantallaRegister(object sender, RoutedEventArgs e) {
-         
-            Register registro = new Register();
-            registro.Show();
-        }
-
-        //Boton de registrarte
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        public void AddTextRePass(object sender, EventArgs e)
         {
 
+            if (string.IsNullOrWhiteSpace(rePassBox.Text))
+                rePassBox.Text = "Repetir Contraseña";
         }
+
+        private void mostrarPantallaLogin(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            
+        }
+
+
     }
+
+    
 }
