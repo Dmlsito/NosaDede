@@ -22,6 +22,17 @@ namespace Trabajo
         public Detalles()
         {
             InitializeComponent();
+            this.WindowState = WindowState.Maximized;
+
+            tamañoimg.Height = new GridLength((System.Windows.SystemParameters.PrimaryScreenHeight * 0.6));
+        }
+
+
+        private void Window_StateChanged(object sender, EventArgs e)
+        {
+            
+            tamañoimg.Height = new GridLength((System.Windows.SystemParameters.PrimaryScreenHeight * 0.6));
+            titulo.Text = sender.ToString() + " -- " + e.ToString();
         }
     }
 }
