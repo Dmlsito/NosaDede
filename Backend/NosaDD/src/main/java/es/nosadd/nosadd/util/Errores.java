@@ -1,7 +1,10 @@
 package es.nosadd.nosadd.util;
 
+
 public class Errores {
 
+    public static final String COD_ERROR_DUPLICADO = "E0001";
+    public static final String MEN_ERROR_DUPLICADO = "Registro duplicado";
     public static final String ERROR_DIRECTORES_NO_ENCONTRADOS = "No se han encontrado directores";
     public static final String ERROR_DIRECTOR_NO_ENCONTRADO = "No se ha encontrado el director";
     public static final String ERROR_DIRECTOR_YA_EXISTE = "El director ya existe";
@@ -20,6 +23,4 @@ public class Errores {
     public static final String ERROR_GENEROSPELICULAS_NO_ENCONTRADOS = "No se han encontrado generosPeliculas";
     public static final String ERROR_GENEROSPELICULAS_NO_ENCONTRADO = "No se ha encontrado el generoPelicula";
     public static final String ERROR_GENEROSPELICULAS_YA_EXISTE = "El generoPelicula ya existe";
-
-
 }

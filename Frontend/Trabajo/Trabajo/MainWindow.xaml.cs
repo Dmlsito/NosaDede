@@ -22,7 +22,9 @@ namespace Trabajo
     {
         public MainWindow()
         {
+            this.WindowState = WindowState.Maximized;
             InitializeComponent();
+
         }
 
         //Boton de iniciar sesion
