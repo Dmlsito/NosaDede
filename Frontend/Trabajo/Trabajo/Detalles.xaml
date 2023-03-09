@@ -9,15 +9,22 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
-            <RowDefinition x:Name="info" Height="90*"/>
+            <RowDefinition Height="90*"/>
         </Grid.RowDefinitions>
-        <WrapPanel Background="Red">
-            <TextBlock Text="LOGO" FontSize="40" Margin="10,10,20,0" FontWeight="Bold" VerticalAlignment="Bottom"/>
-            <TextBlock Text="Inicio"  Margin="10,10,10,0" VerticalAlignment="Bottom"/>
-            <TextBlock Text="Peliculas" Margin="10,10,10,0" VerticalAlignment="Bottom"/>
-            <TextBlock Text="Series" Margin="10,10,20,0" VerticalAlignment="Bottom"/>
-            <TextBox Text="buscar" Height="20" Width="200" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+
+        <WrapPanel Background="#52a5e0">
+            <TextBlock Text="LOGO" FontSize="40" Margin="10,10,20,0" FontWeight="Bold" Foreground="#192229"/>
+            <TextBlock Text="Inicio"  Margin="10,10,10,5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="20" Foreground="#192229"/>
+            <TextBlock Text="Peliculas" Margin="10,10,10,5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="20" Foreground="#192229"/>
+            <TextBlock Text="Series" Margin="10,10,20,5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="20" Foreground="#192229"/>
         </WrapPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90*"/>
+                <ColumnDefinition Width="30*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="1" Text="buscar" Height="20" Width="200" Margin="0,0,50,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        </Grid>
         <ScrollViewer  Grid.Row="1" VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
             <Grid>
                 <Grid.RowDefinitions>
@@ -34,23 +41,23 @@
                     <Border CornerRadius="5" Background="#99000000" Grid.Column="0" Margin="5" VerticalAlignment="Bottom" >
                         <StackPanel  Margin="5">
                             <WrapPanel>
-                                <TextBlock x:Name="titulo" Text="TITULO JOHN WICK" FontSize="40" FontWeight="Bold" Foreground="White"/>
-                                <TextBlock Text="8.0" FontSize="35" FontWeight="Bold" Foreground="White" Margin="20,0,0,0" VerticalAlignment="Bottom"/>
+                                <TextBlock x:Name="titulo" Text="TITULO JOHN WICK" FontSize="40" FontWeight="Bold" Foreground="#eff3f5"/>
+                                <TextBlock Text="8.0" FontSize="35" FontWeight="Bold" Foreground="#eff3f5" Margin="20,0,0,0" VerticalAlignment="Bottom"/>
                             </WrapPanel>
                             <WrapPanel>
-                                <TextBlock Text="2019" FontSize="15" FontWeight="Bold" Foreground="White" Margin="0,10,0,5"/>
-                                <TextBlock Text="duracion: 1:45:00 " FontSize="15" FontWeight="Bold" Foreground="White" Margin="10,10,0,5"/>
+                                <TextBlock Text="2019" FontSize="15" FontWeight="Bold" Foreground="#eff3f5" Margin="0,10,0,5"/>
+                                <TextBlock Text="duracion: 1:45:00 " FontSize="15" FontWeight="Bold" Foreground="#eff3f5" Margin="10,10,0,5"/>
                             </WrapPanel>
                             <TextBlock Text="En este nuevo capítulo que continúa el éxito de 2014,el legendario sicario John Wick (Keanu Reeves) se ve forzado a abandonar su retiro por un antiguo socio que trama con el control de una siniestra cofradía internacional de asesinosObligado a ayudar por un juramento de sangre, John viaja a Romadonde se enfrentará a algunos de los asesinos más letales del mundo."  
-                               Foreground="White" TextWrapping="Wrap" HorizontalAlignment="Left" />
+                               Foreground="#eff3f5" TextWrapping="Wrap" HorizontalAlignment="Left" />
                         </StackPanel>
                     </Border>
 
                 </Grid>
 
-                <StackPanel Grid.Row="1">
+                <StackPanel Grid.Row="1" Background="#192229">
                     <!-- DIRECCION-->
-                    <TextBlock  Text="DIRECCIÓN" FontSize="40" FontWeight="Bold" Foreground="Black" Margin="20,10,0,10" HorizontalAlignment="Left"/>
+                    <TextBlock  Text="DIRECCIÓN" FontSize="40" FontWeight="Bold" Foreground="#eff3f5" Margin="20,10,0,10" HorizontalAlignment="Left"/>
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="33*"/>
@@ -61,40 +68,45 @@
                             <RowDefinition Height="250"/>
                         </Grid.RowDefinitions>
                         
+                        
                         <!-- DIRECTOR 1-->
-                        <Border CornerRadius="10" Grid.Column="0" Margin="20,0,20,0" VerticalAlignment="Bottom" Background="#99000000">
+                        <Border CornerRadius="10" Grid.Column="0" Margin="20,0,20,0" VerticalAlignment="Bottom" Background="#2a3b47" >
+
+                            <WrapPanel>
+
+                                <Image Source="https://upload.wikimedia.org/wikipedia/commons/4/46/Leonardo_Dicaprio_Cannes_2019.jpg" Stretch="Uniform"/>
+
+                                <StackPanel>
+                                    <TextBlock Text="NOMBRE" Foreground="#eff3f5" Margin="10,5,10,10" FontWeight="Bold"/>
+                                    <TextBlock Text="rollo"  Foreground="#eff3f5" Margin="10,5,10,10"/>
+                                </StackPanel>
+                            </WrapPanel>
+                        </Border>
+                        
+                        <!-- DIRECTOR 3-->
+                        <Border CornerRadius="10" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Bottom" Background="#2a3b47">
                             <WrapPanel>
                                 <Image Source="https://upload.wikimedia.org/wikipedia/commons/4/46/Leonardo_Dicaprio_Cannes_2019.jpg"   Stretch="Uniform"/>
                                 <StackPanel>
-                                    <TextBlock Text="NOMBRE" Foreground="White" Margin="10,5,10,10" FontWeight="Bold"/>
-                                    <TextBlock Text="rollo"  Foreground="White" Margin="10,5,10,10"/>
+                                    <TextBlock Text="NOMBRE" Foreground="#eff3f5" Margin="10,5,10,10" FontWeight="Bold"/>
+                                    <TextBlock Text="rollo"  Foreground="#eff3f5" Margin="10,5,10,10"/>
                                 </StackPanel>
                             </WrapPanel>
                         </Border>
                         <!-- DIRECTOR 3-->
-                        <Border CornerRadius="10" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Bottom" Background="#99000000">
+                        <Border CornerRadius="10" Grid.Column="2" Margin="20,0,20,0" VerticalAlignment="Bottom" Background="#2a3b47">
                             <WrapPanel>
                                 <Image Source="https://upload.wikimedia.org/wikipedia/commons/4/46/Leonardo_Dicaprio_Cannes_2019.jpg"   Stretch="Uniform"/>
                                 <StackPanel>
-                                    <TextBlock Text="NOMBRE" Foreground="White" Margin="10,5,10,10" FontWeight="Bold"/>
-                                    <TextBlock Text="rollo"  Foreground="White" Margin="10,5,10,10"/>
-                                </StackPanel>
-                            </WrapPanel>
-                        </Border>
-                        <!-- DIRECTOR 3-->
-                        <Border CornerRadius="10" Grid.Column="2" Margin="20,0,20,0" VerticalAlignment="Bottom" Background="#99000000">
-                            <WrapPanel>
-                                <Image Source="https://upload.wikimedia.org/wikipedia/commons/4/46/Leonardo_Dicaprio_Cannes_2019.jpg"   Stretch="Uniform"/>
-                                <StackPanel>
-                                    <TextBlock Text="NOMBRE" Foreground="White" Margin="10,5,10,10" FontWeight="Bold"/>
-                                    <TextBlock Text="rollo"  Foreground="White" Margin="10,5,10,10"/>
+                                    <TextBlock Text="NOMBRE" Foreground="#eff3f5" Margin="10,5,10,10" FontWeight="Bold"/>
+                                    <TextBlock Text="rollo"  Foreground="#eff3f5" Margin="10,5,10,10"/>
                                 </StackPanel>
                             </WrapPanel>
                         </Border>
                     </Grid>
                     <!-- REPARTO-->
-                    <TextBlock  Text="REPARTO" FontSize="40" FontWeight="Bold" Foreground="Black" Margin="20,10,0,10" HorizontalAlignment="Left"/>
-                    <Grid>
+                    <TextBlock  Text="REPARTO" FontSize="40" FontWeight="Bold" Foreground="#eff3f5" Margin="20,10,0,10" HorizontalAlignment="Left"/>
+                    <Grid Margin="0,0,0,50">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="33*"/>
                             <ColumnDefinition Width="33*"/>
@@ -104,32 +116,32 @@
                             <RowDefinition Height="250"/>
                         </Grid.RowDefinitions>
                         <!-- ACTOR 1-->
-                        <Border CornerRadius="10" Grid.Column="0" Margin="20,0,20,0" VerticalAlignment="Bottom" Background="#99000000">
+                        <Border CornerRadius="10" Grid.Column="0" Margin="20,0,20,0" VerticalAlignment="Bottom" Background="#2a3b47">
                             <WrapPanel>
                                 <Image Source="https://upload.wikimedia.org/wikipedia/commons/4/46/Leonardo_Dicaprio_Cannes_2019.jpg"   Stretch="Uniform"/>
                                 <StackPanel>
-                                    <TextBlock Text="NOMBRE" Foreground="White" FontWeight="Bold"/>
-                                    <TextBlock Text="rollo"  Foreground="White"/>
+                                    <TextBlock Text="NOMBRE" Foreground="#eff3f5" FontWeight="Bold"/>
+                                    <TextBlock Text="rollo"  Foreground="#eff3f5"/>
                                 </StackPanel>
                             </WrapPanel>
                         </Border>
                         <!-- ACTOR 2-->
-                        <Border CornerRadius="10" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Bottom" Background="#99000000">
+                        <Border CornerRadius="10" Grid.Column="1" Margin="20,0,20,0" VerticalAlignment="Bottom" Background="#2a3b47">
                             <WrapPanel>
                                 <Image Source="https://upload.wikimedia.org/wikipedia/commons/4/46/Leonardo_Dicaprio_Cannes_2019.jpg"   Stretch="Uniform"/>
                                 <StackPanel>
-                                    <TextBlock Text="NOMBRE" Foreground="White" FontWeight="Bold"/>
-                                    <TextBlock Text="rollo"  Foreground="White"/>
+                                    <TextBlock Text="NOMBRE" Foreground="#eff3f5" FontWeight="Bold"/>
+                                    <TextBlock Text="rollo"  Foreground="#eff3f5"/>
                                 </StackPanel>
                             </WrapPanel>
                         </Border>
                         <!-- ACTOR 3-->
-                        <Border CornerRadius="10" Grid.Column="2" Margin="20,0,20,0" VerticalAlignment="Bottom" Background="#99000000">
+                        <Border CornerRadius="10" Grid.Column="2" Margin="20,0,20,0" VerticalAlignment="Bottom" Background="#2a3b47">
                             <WrapPanel>
                                 <Image Source="https://upload.wikimedia.org/wikipedia/commons/4/46/Leonardo_Dicaprio_Cannes_2019.jpg"   Stretch="Uniform"/>
                                 <StackPanel>
-                                    <TextBlock Text="NOMBRE" Foreground="White" FontWeight="Bold"/>
-                                    <TextBlock Text="rollo"  Foreground="White"/>
+                                    <TextBlock Text="NOMBRE" Foreground="#eff3f5" FontWeight="Bold"/>
+                                    <TextBlock Text="rollo"  Foreground="#eff3f5"/>
                                 </StackPanel>
                             </WrapPanel>
                         </Border>

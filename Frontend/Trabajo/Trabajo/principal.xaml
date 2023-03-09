@@ -4,224 +4,425 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Trabajo"
-        mc:Ignorable="d"
-        Title="principal" Height="450" Width="800">
+        mc:Ignorable="d">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="363*"/>
+            <ColumnDefinition Width="533*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
-            <RowDefinition Height="90*"/>
+            <RowDefinition x:Name="info" Height="90*"/>
         </Grid.RowDefinitions>
-        <WrapPanel Background="Red">
-            <TextBlock Text="LOGO" FontSize="40" Margin="10,10,20,0" FontWeight="Bold"/>
-            <TextBlock Text="Inicio"  Margin="10,10,10,0"/>
-            <TextBlock Text="Peliculas" Margin="10,10,10,0"/>
-            <TextBlock Text="Series" Margin="10,10,20,0"/>
-            <TextBox Text="buscar" Height="20" Width="200" Margin="250,0,0,0"/>
-            
+        <WrapPanel Background="#52a5e0" Grid.ColumnSpan="2">
+            <TextBlock Text="LOGO" FontSize="40" Margin="10,10,20,5" FontWeight="Bold" VerticalAlignment="Bottom" Foreground="#192229"/>
+            <TextBlock Text="Inicio"  Margin="10,10,10,5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="20" Foreground="#192229"/>
+            <TextBlock Text="Peliculas" Margin="10,10,10,5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="20" Foreground="#192229"/>
+            <TextBlock Text="Series" Margin="10,10,20,5" VerticalAlignment="Bottom" FontWeight="Bold" FontSize="20" Foreground="#192229"/>
         </WrapPanel>
-        <StackPanel Grid.Row="1">
-            <TextBlock Text="Estrenos recientes" Margin="20,20,20,10"/>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="90*"/>
-                    <ColumnDefinition Width="5*"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="atras" Margin="10,0,0,0" Click="Button_Click" />
-                <ScrollViewer x:Name="scestreno" Grid.Column="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
-                    <WrapPanel>
-                        <!-- pendiente de poner los bordes redondeados y algo cuando pases al raton por encima-->
-                        <!-- recomendacionEstrenos estreno1 tituloEstreno1 añoEstreno1 calificacionEstreno1-->
-                    
-                        <!-- Recomendacion estreno 1 -->
-                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
-                            <!-- Poster-->
-                            <Image x:Name="estreno1" Source="https://i.pinimg.com/originals/fd/82/c1/fd82c1116eb734b625552241e00e2a20.png" Width="160" Height="200" MouseEnter="estreno1_MouseEnter" MouseLeave="estreno1_MouseLeave">
-                                
-                            </Image>
-                            <StackPanel x:Name="datosEstrenos1" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
-                                <!-- Año-->
-                                <TextBlock Text="2013" Foreground="White"/>
-                                <!-- Titulo-->
-                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
+        <Grid Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90*"/>
+                <ColumnDefinition Width="30*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="1" Text="buscar" Height="20" Width="200" Margin="0,0,50,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+        </Grid>
+        <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Visible" Background="#192229">
+            <StackPanel>
 
-                            </StackPanel>
-                            <TextBlock x:Name="notaEstreno1" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
-                        </Canvas>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="25*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="25*"/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="25*"/>
+                    </Grid.RowDefinitions>
 
-                        <!-- Recomendacion estreno 2 -->
-                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
-                            <!-- Poster-->
-                            <Image x:Name="estreno2" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/caballero-oscuro-joker/7055604-1-esl-ES/CABALLERO-OSCURO-JOKER.jpg" Width="160" Height="200"/>
-                            <StackPanel x:Name="datosEstrenos2" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
-                                <!-- Año-->
-                                <TextBlock Text="2013" Foreground="White"/>
-                                <!-- Titulo-->
-                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
-                            </StackPanel>
-                            <TextBlock x:Name="notaEstreno2" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
-                        </Canvas>
+                    <TextBlock Text="Estrenos recientes"  FontSize="40" FontWeight="Bold" Foreground="#eff3f5" Margin="20,10,0,10" HorizontalAlignment="Left"/>
 
-                        <!-- Recomendacion estreno 3 -->
-                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
-                            <!-- Poster-->
-                            <Image x:Name="estreno3" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/cisne-negro/7055592-1-esl-ES/CISNE-NEGRO.jpg?resize=480:*" Width="160" Height="200"/>
-                            <StackPanel x:Name="datosEstrenos3" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
-                                <!-- Año-->
-                                <TextBlock Text="2013" Foreground="White"/>
-                                <!-- Titulo-->
-                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
-                            </StackPanel>
-                            <TextBlock x:Name="notaEstreno3" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
-                        </Canvas>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="90*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
 
-                        <!-- Recomendacion estreno 4 -->
-                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
-                            <!-- Poster-->
-                            <Image x:Name="estreno4" Source="https://cdn.oldskull.net/wp-content/uploads/2015/07/Flore-Maquin-movie-posters-illustration-fight-club-.jpg" Width="160" Height="200"/>
-                            <StackPanel x:Name="datosEstrenos4" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
-                                <!-- Año-->
-                                <TextBlock Text="2013" Foreground="White"/>
-                                <!-- Titulo-->
-                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
-                            </StackPanel>
-                            <TextBlock x:Name="notaEstreno4" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
-                        </Canvas>
+                        <Button Grid.Column="0" Foreground="#c8cdd0" Content="atras"  Margin="10,0,0,0" Click="Button_Click" BorderThickness="0" Background="#212e36"/>
 
-                        <!-- Recomendacion estreno 5 -->
-                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
-                            <!-- Poster-->
-                            <Image x:Name="estreno5" Source="https://www.quepelivemoshoy.com/wp-content/uploads/2020/11/poster-el-padrino-726x1024.jpg" Width="160" Height="200"/>
-                            <StackPanel x:Name="datosEstrenos5" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
-                                <!-- Año-->
-                                <TextBlock Text="2013" Foreground="White"/>
-                                <!-- Titulo-->
-                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
-                            </StackPanel>
-                            <TextBlock x:Name="notaEstreno5" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
-                        </Canvas>
 
-                        <!-- Recomendacion estreno 6 -->
-                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
-                            <!-- Poster-->
-                            <Image x:Name="estreno6" Source="https://www.findelahistoria.com/web/wp-content/uploads/2016/12/postersilence-poster.jpg" Width="160" Height="200"/>
-                            <StackPanel x:Name="datosEstrenos6" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
-                                <!-- Año-->
-                                <TextBlock Text="2013" Foreground="White"/>
-                                <!-- Titulo-->
-                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
-                            </StackPanel>
-                            <TextBlock x:Name="notaEstreno6" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
-                        </Canvas>
+                        <ScrollViewer x:Name="scestreno" Grid.Column="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" Background="#2a3b47">
+                            <Grid MaxHeight="400" MinHeight="200">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                </Grid.ColumnDefinitions>
 
-                        <!-- Recomendacion estreno 7 -->
-                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
-                            <!-- Poster-->
-                            <Image x:Name="estreno7" Source="https://media.posterlounge.com/images/m/1875927.jpg" Width="160" Height="200"/>
-                            <StackPanel x:Name="datosEstrenos7" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
-                                <!-- Año-->
-                                <TextBlock Text="2013" Foreground="White"/>
-                                <!-- Titulo-->
-                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
-                            </StackPanel>
-                            <TextBlock x:Name="notaEstreno7" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
-                        </Canvas>
+                                <!-- ESTRENO 1-->
+                                <Grid Grid.Column="0" Margin="10" MouseEnter="estreno1_MouseEnter" MouseLeave="estreno1_MouseLeave">
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
 
-                        <!-- Recomendacion estreno 8 -->
-                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
-                            <!-- Poster-->
-                            <Image x:Name="estreno8" Source="https://m.media-amazon.com/images/I/510XPjWbCDL._AC_UL320_.jpg" Width="160" Height="200"/>
-                            <StackPanel x:Name="datosEstrenos8" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
-                                <!-- Año-->
-                                <TextBlock Text="2013" Foreground="White"/>
-                                <!-- Titulo-->
-                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
-                            </StackPanel>
-                            <TextBlock x:Name="notaEstreno8" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
-                        </Canvas>
+                                    <StackPanel x:Name="datosEstrenos1" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
 
-                        <!-- Recomendacion estreno 9 -->
-                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
-                            <!-- Poster-->
-                            <Image x:Name="estreno9" Source="https://i.blogs.es/7c467d/la-cosa/450_1000.jpg" Width="160" Height="200"/>
-                            <StackPanel x:Name="datosEstrenos9" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
-                                <!-- Año-->
-                                <TextBlock Text="2013" Foreground="White"/>
-                                <!-- Titulo-->
-                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
-                            </StackPanel>
-                            <TextBlock x:Name="notaEstreno9" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
-                        </Canvas>
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaEstreno1" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
 
-                        <!-- Recomendacion estreno 10 -->
-                        <Canvas  Width="160" Height="200" Panel.ZIndex="1">
-                            <!-- Poster-->
-                            <Image x:Name="estreno10" Source="https://i.pinimg.com/236x/84/3c/0d/843c0d1f5e7eda9f3cfa54cb16e0ca03.jpg" Width="160" Height="200"/>
-                            <StackPanel x:Name="datosEstrenos10" Canvas.Left="10" Canvas.Bottom="10" Width="160" Visibility="Hidden">
-                                <!-- Año-->
-                                <TextBlock Text="2013" Foreground="White"/>
-                                <!-- Titulo-->
-                                <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINOS" Foreground="White" TextWrapping="Wrap"/>
-                            </StackPanel>
-                            <TextBlock x:Name="notaEstreno10" Text="8" Canvas.Right="10" Canvas.Top="5" Foreground="Red" Visibility="Hidden"/>
-                        </Canvas>
-                        
-                    </WrapPanel>
-                </ScrollViewer>
-                <Button Grid.Column="2" Content="adelante" Margin="0,0,10,0" Click="Button_Click_1"/>
-            </Grid>
-            
-            <TextBlock Text="Peliculas recomendadas" Margin="20,20,20,10"/>
+                                <!-- ESTRENO 2-->
+                                <Grid Grid.Column="1" Margin="10" MouseEnter="estreno2_MouseEnter" MouseLeave="estreno2_MouseLeave">
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="90*"/>
-                    <ColumnDefinition Width="5*"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="atras" Margin="10,0,0,0" Click="Button_Click_2"/>
-                <ScrollViewer x:Name="recomendado" Grid.Column="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
-                    <WrapPanel>
-                        <Image x:Name="recomendado1" Source="https://i.pinimg.com/originals/fd/82/c1/fd82c1116eb734b625552241e00e2a20.png" Width="160" Height="200"/>
-                        <Image x:Name="recomendado2" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/caballero-oscuro-joker/7055604-1-esl-ES/CABALLERO-OSCURO-JOKER.jpg" Width="160" Height="200"/>
-                        <Image x:Name="recomendado3" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/cisne-negro/7055592-1-esl-ES/CISNE-NEGRO.jpg?resize=480:*" Width="160" Height="200"/>
-                        <Image x:Name="recomendado4" Source="https://cdn.oldskull.net/wp-content/uploads/2015/07/Flore-Maquin-movie-posters-illustration-fight-club-.jpg" Width="160" Height="200"/>
-                        <Image x:Name="recomendado5" Source="https://www.quepelivemoshoy.com/wp-content/uploads/2020/11/poster-el-padrino-726x1024.jpg" Width="160" Height="200"/>
-                        <Image x:Name="recomendado6" Source="https://www.findelahistoria.com/web/wp-content/uploads/2016/12/postersilence-poster.jpg" Width="160" Height="200"/>
-                        <Image x:Name="recomendado7" Source="https://media.posterlounge.com/images/m/1875927.jpg" Width="160" Height="200"/>
-                        <Image x:Name="recomendado8" Source="https://m.media-amazon.com/images/I/510XPjWbCDL._AC_UL320_.jpg" Width="160" Height="200"/>
-                        <Image x:Name="recomendado9" Source="https://i.blogs.es/7c467d/la-cosa/450_1000.jpg" Width="160" Height="200"/>
-                        <Image x:Name="recomendado10" Source="https://i.pinimg.com/236x/84/3c/0d/843c0d1f5e7eda9f3cfa54cb16e0ca03.jpg" Width="160" Height="200"/>
-                    </WrapPanel>
-                </ScrollViewer>
-                <Button Grid.Column="2" Content="adelante" Margin="0,0,10,0" Click="Button_Click_3"/>
-            </Grid>
-            
-            <TextBlock Text="Series recomendadas" Margin="20,20,20,10"/>
+                                    <StackPanel x:Name="datosEstrenos2" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
 
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5*"/>
-                    <ColumnDefinition Width="90*"/>
-                    <ColumnDefinition Width="5*"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="atras" Margin="10,0,0,0" Click="Button_Click_4"/>
-                <ScrollViewer x:Name="srecomendado" Grid.Column="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled">
-                    <WrapPanel>
-                        <Image x:Name="srecomendado1" Source="https://i.pinimg.com/originals/fd/82/c1/fd82c1116eb734b625552241e00e2a20.png" Width="160" Height="200"/>
-                        <Image x:Name="srecomendado2" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/caballero-oscuro-joker/7055604-1-esl-ES/CABALLERO-OSCURO-JOKER.jpg" Width="160" Height="200"/>
-                        <Image x:Name="srecomendado3" Source="https://hips.hearstapps.com/es.h-cdn.co/fotoes/images/media/imagenes/reportajes/los-20-posters-de-peliculas-mas-creativos/cisne-negro/7055592-1-esl-ES/CISNE-NEGRO.jpg?resize=480:*" Width="160" Height="200"/>
-                        <Image x:Name="srecomendado4" Source="https://cdn.oldskull.net/wp-content/uploads/2015/07/Flore-Maquin-movie-posters-illustration-fight-club-.jpg" Width="160" Height="200"/>
-                        <Image x:Name="srecomendado5" Source="https://www.quepelivemoshoy.com/wp-content/uploads/2020/11/poster-el-padrino-726x1024.jpg" Width="160" Height="200"/>
-                        <Image x:Name="srecomendado6" Source="https://www.findelahistoria.com/web/wp-content/uploads/2016/12/postersilence-poster.jpg" Width="160" Height="200"/>
-                        <Image x:Name="srecomendado7" Source="https://media.posterlounge.com/images/m/1875927.jpg" Width="160" Height="200"/>
-                        <Image x:Name="srecomendado8" Source="https://m.media-amazon.com/images/I/510XPjWbCDL._AC_UL320_.jpg" Width="160" Height="200"/>
-                        <Image x:Name="srecomendado9" Source="https://i.blogs.es/7c467d/la-cosa/450_1000.jpg" Width="160" Height="200"/>
-                        <Image x:Name="srecomendado10" Source="https://i.pinimg.com/236x/84/3c/0d/843c0d1f5e7eda9f3cfa54cb16e0ca03.jpg" Width="160" Height="200"/>
-                    </WrapPanel>
-                </ScrollViewer>
-                <Button Grid.Column="2" Content="adelante" Margin="0,0,10,0" Click="Button_Click_5"/>
-            </Grid>
-        </StackPanel>
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaEstreno2" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- ESTRENO 3-->
+                                <Grid Grid.Column="2" Margin="10" MouseEnter="estreno3_MouseEnter" MouseLeave="estreno3_MouseLeave">
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosEstrenos3" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaEstreno3" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- ESTRENO 4-->
+                                <Grid Grid.Column="3" Margin="10" MouseEnter="estreno4_MouseEnter" MouseLeave="estreno4_MouseLeave">
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosEstrenos4" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaEstreno4" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- ESTRENO 5-->
+                                <Grid Grid.Column="4" Margin="10" MouseEnter="estreno5_MouseEnter" MouseLeave="estreno5_MouseLeave">
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosEstrenos5" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaEstreno5" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- ESTRENO 6-->
+                                <Grid Grid.Column="5" Margin="10" MouseEnter="estreno6_MouseEnter" MouseLeave="estreno6_MouseLeave">
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosEstrenos6" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaEstreno6" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- ESTRENO 7-->
+                                <Grid Grid.Column="6" Margin="10" MouseEnter="estreno7_MouseEnter" MouseLeave="estreno7_MouseLeave">
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosEstrenos7" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaEstreno7" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- ESTRENO 8-->
+                                <Grid Grid.Column="7" Margin="10" MouseEnter="estreno8_MouseEnter" MouseLeave="estreno8_MouseLeave">
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosEstrenos8" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaEstreno8" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- ESTRENO 9-->
+                                <Grid Grid.Column="8" Margin="10" MouseEnter="estreno9_MouseEnter" MouseLeave="estreno9_MouseLeave">
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosEstrenos9" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaEstreno9" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- ESTRENO 10-->
+                                <Grid Grid.Column="9" Margin="10" MouseEnter="estreno10_MouseEnter" MouseLeave="estreno10_MouseLeave">
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosEstrenos10" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaEstreno10" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+                            </Grid>
+                        </ScrollViewer>
+
+                        <Button Grid.Column="2" Content="adelante" Margin="0,0,10,0" Click="Button_Click_1" BorderThickness="0" Background="#212e36" Foreground="#c8cdd0"/>
+                    </Grid>
+
+                    <TextBlock  Grid.Row="2" Text="Peliculas recomendadas"  FontSize="40" FontWeight="Bold" Foreground="#eff3f5" Margin="20,10,0,10" HorizontalAlignment="Left"/>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="90*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Content="atras" Margin="10,0,0,0" Click="Button_Click_2" BorderThickness="0" Background="#212e36" Foreground="#c8cdd0"/>
+                        <ScrollViewer x:Name="recomendado" Grid.Column="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" Background="#2a3b47">
+                            <Grid MaxHeight="400" MinHeight="200">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- RECOMENDACION 1-->
+                                <Grid Grid.Column="0" Margin="10" MouseLeave="recomendacion1_MouseLeave" MouseEnter="recomendacion1_MouseEnter" >
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosRecomendacion1" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaRecomendacion1" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- RECOMENDACION 2-->
+                                <Grid Grid.Column="1" Margin="10" MouseLeave="recomendacion2_MouseLeave" MouseEnter="recomendacion2_MouseEnter" >
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosRecomendacion2" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaRecomendacion2" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- RECOMENDACION 3-->
+                                <Grid Grid.Column="2" Margin="10" MouseLeave="recomendacion3_MouseLeave" MouseEnter="recomendacion3_MouseEnter" >
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosRecomendacion3" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaRecomendacion3" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- RECOMENDACION 4-->
+                                <Grid Grid.Column="3" Margin="10" MouseLeave="recomendacion4_MouseLeave" MouseEnter="recomendacion4_MouseEnter" >
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosRecomendacion4" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaRecomendacion4" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- RECOMENDACION 5-->
+                                <Grid Grid.Column="4" Margin="10" MouseLeave="recomendacion5_MouseLeave" MouseEnter="recomendacion5_MouseEnter" >
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosRecomendacion5" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaRecomendacion5" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- RECOMENDACION 6-->
+                                <Grid Grid.Column="5" Margin="10" MouseLeave="recomendacion6_MouseLeave" MouseEnter="recomendacion6_MouseEnter" >
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosRecomendacion6" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaRecomendacion6" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- RECOMENDACION 7-->
+                                <Grid Grid.Column="6" Margin="10" MouseLeave="recomendacion7_MouseLeave" MouseEnter="recomendacion7_MouseEnter" >
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosRecomendacion7" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaRecomendacion7" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- RECOMENDACION 8-->
+                                <Grid Grid.Column="7" Margin="10" MouseLeave="recomendacion8_MouseLeave" MouseEnter="recomendacion8_MouseEnter" >
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosRecomendacion8" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaRecomendacion8" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- RECOMENDACION 9-->
+                                <Grid Grid.Column="8" Margin="10" MouseLeave="recomendacion9_MouseLeave" MouseEnter="recomendacion9_MouseEnter" >
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosRecomendacion9" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaRecomendacion9" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+                                <!-- RECOMENDACION 10-->
+                                <Grid Grid.Column="9" Margin="10" MouseLeave="recomendacion10_MouseLeave" MouseEnter="recomendacion10_MouseEnter" >
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosRecomendacion10" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaRecomendacion10" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+                            </Grid>
+                        </ScrollViewer>
+                        <Button Grid.Column="2" Content="adelante" Margin="0,0,10,0" Click="Button_Click_3" BorderThickness="0" Foreground="#c8cdd0" Background="#212e36"/>
+                    </Grid>
+
+                    <TextBlock Grid.Row="4" Text="Series recomendadas"  FontSize="40" FontWeight="Bold" Foreground="#eff3f5" Margin="20,10,0,10" HorizontalAlignment="Left"/>
+
+                    <Grid Grid.Row="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5*"/>
+                            <ColumnDefinition Width="90*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Column="0" Content="atras" Margin="10,0,0,0" Click="Button_Click_4" BorderThickness="0" Foreground="#c8cdd0" Background="#212e36"/>
+                        <ScrollViewer x:Name="srecomendado" Grid.Column="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Disabled" Background="#2a3b47">
+                            <Grid MaxHeight="400" MinHeight="200">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                    <ColumnDefinition Width="10*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- SERIE RECOMENDACION 1-->
+                                <Grid Grid.Column="0" Margin="10" >
+                                    <Image Source="https://media.posterlounge.com/images/m/1875927.jpg" Stretch="UniformToFill"/>
+
+                                    <StackPanel x:Name="datosSerieRecomendacion1" VerticalAlignment="Bottom"  Visibility="Hidden" Background="#99000000">
+                                        <!-- Año-->
+                                        <TextBlock Text="2013" Foreground="White" FontSize="30" FontWeight="Bold" Margin="5"/>
+                                        <!-- Titulo-->
+                                        <TextBlock Text="TITULO EL ATAQUE DE LOS TOMATES ASESINO" Foreground="White" TextWrapping="Wrap" MaxWidth="250" FontSize="20" FontWeight="Bold"  Margin="5"/>
+
+                                    </StackPanel>
+                                    <TextBlock x:Name="notaSerieRecomendacion1" Text="8" HorizontalAlignment="Right"  Visibility="Hidden" Foreground="White" FontWeight="Bold" FontSize="20" VerticalAlignment="Top" MinWidth="25" TextAlignment="Center" Background="#99000000"/>
+                                </Grid>
+
+
+                            </Grid>
+
+                        </ScrollViewer>
+                        <Button Grid.Column="2" Content="adelante" Margin="0,0,10,0" Click="Button_Click_5" BorderThickness="0" Foreground="#c8cdd0" Background="#212e36"/>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>
